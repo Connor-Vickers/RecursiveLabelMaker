@@ -1,0 +1,4 @@
+*.venv/*
+*qr_code.png
+*label_to_print.html
+*label.pdf

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flask To-Do List</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h2>To-Do List</h2>
+        <form action="/add" method="POST">
+            <input type="text" name="task" placeholder="Add a new task" required>
+            <button type="submit">Add Task</button>
+        </form>
+        <ul>
+            {% for task in tasks %}
+                <li>
+                    {{ task.text }}
+                    <a href="/delete/{{ task.id }}">Delete</a>
+                </li>
+            {% endfor %}
+        </ul>
+    <form action="/print" method="POST">
+        <button type="submit">Print</button>
+    </form>
+</div>
+</body>
+</html>

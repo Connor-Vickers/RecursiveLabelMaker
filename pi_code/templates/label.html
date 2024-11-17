@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<body>
+    <div class="container">
+        {% for task in tasks %}
+            {{ task.text }}{% if not loop.last %}, {% endif %}
+        {% endfor %}
+    </div>
+    <div class="image-container">
+        <img src="data:image/jpeg;base64,{{qr_code}}">
+    </div>
+</body>
+</html>
